@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign to Text</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body style="background-color: #333;"> <!-- Darker background for contrast -->
+    <h1 style="text-align: center; color: #ffffff;">Sign to Text</h1> <!-- Updated color -->
+    <div class="camera-container" style="display: flex; justify-content: center; align-items: center; width: 640px; height: 360px; background-color: black; border: 4px solid #00ff00; border-radius: 8px; margin: 20px auto;">
+        <video id="video" autoplay style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></video>
+    </div>
+    <div class="controls" style="text-align: center; margin-top: 20px;">
+        <button id="start" style="margin: 5px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Start Recording</button>
+        <button id="stop" style="margin: 5px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Stop Recording</button>
+        <button id="translate-text" style="margin: 5px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Translate to Text</button>
+        <button id="translate-audio" style="margin: 5px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Translate to Audio</button>
+    </div>
+    <footer style="text-align: center; margin-top: 20px;">
+<a href="/" style="color: #ffffff;">Back to Home</a> <!-- Updated color -->
+    </footer>
+    <script>
+        let recorder;
+        let audioChunks = [];
+
+        // Request camera access
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(function(stream) {
+                document.getElementById('video').srcObject = stream;
+            })
+            .catch(function(err) {
+                console.error("Error accessing camera: " + err);
+            });
+
+        document.getElementById('start').addEventListener('click', () => {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    recorder = new MediaRecorder(stream);
+                    recorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                    recorder.start();
+                });
+        });
+
+        document.getElementById('stop').addEventListener('click', () => {
+            recorder.stop();
+            const audioBlob = new Blob(audioChunks);
+            // Handle audioBlob for translation
+        });
+
+        document.getElementById('translate-text').addEventListener('click', () => {
+            // Implement translation to text
+        });
+
+        document.getElementById('translate-audio').addEventListener('click', () => {
+            // Implement translation to audio
+        });
+    </script>
+</body>
+</html>

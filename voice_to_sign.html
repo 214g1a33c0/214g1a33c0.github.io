@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Sign</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Voice to Sign Translator</h1>
+    <div>
+        <input type="text" id="inputText" placeholder="Enter text to translate to ISL">
+        <button id="translateButton">Translate</button>
+        <button id="recordButton">Record</button>
+        <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="outputContainer" style="text-align: center;">
+        <h2>ISL Signs:</h2>
+        <div id="output"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+
+        $(document).ready(function() {
+            $('#translateButton').click(function() {
+                const inputText = $('#inputText').val();
+                $.ajax({
+                    type: 'POST',
+                    url: '/translate',
+                    data: JSON.stringify({ text: inputText }),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        $('#output').html(response.html);
+                    },
+                    error: function() {
+                        alert('Error translating text.');
+                    }
+                });
+            });
+
+            $('#recordButton').click(function() {
+                navigator.mediaDevices.getUserMedia({ audio: true }).then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+                    $('#recordButton').prop('disabled', true);
+                    $('#stopButton').prop('disabled', false);
+
+                    mediaRecorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+
+                    mediaRecorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks);
+                        const reader = new FileReader();
+                        reader.onloadend = () => {
+                            const base64data = reader.result;
+                            $.ajax({
+                                type: 'POST',
+                                url: '/transcribe',
+                                data: JSON.stringify({ audio: base64data }),
+                                contentType: 'application/json',
+                                success: function(response) {
+                                    $('#inputText').val(response.transcribedText);
+                                    $('#output').html(response.html);
+                                },
+                                error: function() {
+                                    alert('Error transcribing audio.');
+                                }
+                            });
+                        };
+                        reader.readAsDataURL(audioBlob);
+                        audioChunks = [];
+                    };
+                });
+            });
+
+            $('#stopButton').click(function() {
+                mediaRecorder.stop();
+                $('#recordButton').prop('disabled', false);
+                $('#stopButton').prop('disabled', true);
+            });
+        });
+    </script>
+</body>
+</html>

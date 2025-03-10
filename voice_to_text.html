@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice to Text</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <h1>Voice to Text</h1>
+    <button id="record">Record</button>
+    <p id="transcript">Transcript will appear here...</p>
+    <footer>
+<a href="/">Back to Home</a>
+    </footer>
+    <script>
+        let recorder;
+        let audioChunks = [];
+
+        document.getElementById('record').addEventListener('click', () => {
+            navigator.mediaDevices.getUserMedia({ audio: true })
+                .then(stream => {
+                    recorder = new MediaRecorder(stream);
+                    recorder.ondataavailable = event => {
+                        audioChunks.push(event.data);
+                    };
+                    recorder.onstop = () => {
+                        const audioBlob = new Blob(audioChunks);
+                        const reader = new FileReader();
+                        reader.onload = () => {
+                            document.getElementById('transcript').innerText = reader.result; // Placeholder for actual transcription
+                        };
+                        reader.readAsText(audioBlob); // Placeholder for actual transcription
+                    };
+                    recorder.start();
+                });
+        });
+    </script>
+</body>
+</html>

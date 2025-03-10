@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text to Sign Language</title>
+    <script>
+        async function translateTextToSign() {
+            const textInput = document.getElementById('textInput').value;
+            const response = await fetch('/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: textInput })
+            });
+            const result = await response.json();
+            document.getElementById('signOutput').innerHTML = result.signs;
+        }
+    </script>
+</head>
+<body>
+    <h1>Text to Sign Language Translator</h1>
+    <form onsubmit="event.preventDefault(); translateTextToSign();">
+        <label for="textInput">Enter text:</label>
+        <input type="text" id="textInput" name="textInput" required>
+        <button type="submit">Translate</button>
+    </form>
+    <div id="signOutput"></div>
+</body>
+</html>
