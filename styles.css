@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff; /* Light background for a pleasant feel */
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50; /* Darker text for contrast */
+}
+
+.options {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #3498db; /* Soft blue for buttons */
+    color: white; /* White text for contrast */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.camera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-color: #34495e; /* Dark background for camera area */
+    margin: 20px 0;
+}
+
+.sign-output {
+    background-color: #ecf0f1; /* Light gray for output area */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* New styles for output images */
+#outputContainer {
+    display: flex;
+    flex-direction: row; /* Change to row for horizontal layout */
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#output {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping to ensure horizontal scrolling */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    justify-content: flex-start; /* Align items to the start */
+}
+
+
+#output {
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-wrap: wrap; /* Allow wrapping of images if necessary */
+    justify-content: center; /* Center the images */
+}
+
+#output img {
+    max-width: 100px; /* Set a fixed width for images */
+    height: auto;
+    margin: 10px; /* Space between images */
+}
+
