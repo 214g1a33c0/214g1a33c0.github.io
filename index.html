@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DynamicFolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="style.css">    <!-- EmailJS SDK for handling contact form emails -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>    <!-- Inline the config to avoid CORS issues -->
+    <script>
+        // EmailJS Configuration - Updated with correct User ID
+        window.emailjsConfig = {
+            USER_ID: "jSDXcMBifNfEc5l5x", 
+            SERVICE_ID: "service_2vqmb2k",
+            TEMPLATE_ID: "template_s6ibv8o"
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><i class="fas fa-code"></i> Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Portfolio</a></li>
+                <li><a href="#internships">Internships</a></li>
+                <li><a href="#certs">Certs</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+    
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Hello, I'm <span class="highlight">VAILETI VENKATA SAI KUMAR</span></h1>
+            <p>Aspiring AI Engineer | 2025 Graduate passionate about building innovative and user-centric applications.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-outline">Get In Touch</a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+    </section>
+
+    <section id="about" class="animate-on-scroll">
+        <h1>About Me</h1>
+        <p class="subtitle">A brief introduction to who I am, my passions, and what drives me.</p>
+        <div class="about-container">
+            <div class="about-cards">
+                <div class="about-card">
+                    <h3><i class="fas fa-graduation-cap card-icon"></i> My Journey</h3>
+                    <p>I'm a CS - AI & ML student from Srinivasa Ramanujan Institute of Technology, graduated in 2025. My academic journey has equipped me with a strong foundation in computer science principles and a keen interest in developing practical, impactful software solutions. I thrive on challenges and am always eager to learn new technologies.</p>
+                </div>
+                <div class="about-card">
+                    <h3><i class="fas fa-lightbulb card-icon"></i> Skills & Interests</h3>
+                    <p>Beyond coding, I enjoy cooking and tearing down elctronic gadgets. I believe in continuous learning and applying my skills to creative projects.</p>
+                    <div class="badges">
+                        <span class="badge">Python</span>
+                        <span class="badge">C</span>
+                        <span class="badge">Java</span>
+                        <span class="badge">Kotlin</span>
+                        <span class="badge">Go</span>
+                        <span class="badge">SQL</span>
+                        <span class="badge">MongoDB</span>
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Django</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">React</span>
+                        <span class="badge">AWS</span>
+                        <span class="badge">Azure</span>
+                        <span class="badge">Google Cloud</span>
+                        <span class="badge">Github</span>
+                        <span class="badge">Visual Studio</span>
+                        <span class="badge">Jupyter Notebook</span>
+                        <span class="badge">Alteryx Studio</span>
+                        <span class="badge">Machine Learning</span>
+                        <span class="badge">Deep Learning</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="animate-on-scroll">
+        <h1>My Portfolio</h1>
+        <p class="subtitle">A selection of projects I've worked on.</p>
+        <div class="projects-slider">
+            <div class="project-card">
+
+                <h3> Indian Sign Language Translation Using Deep Learning Techniques </h3>
+                <p>Developed a multi-format translation solution utilizing deep learning techniques, enabling 
+real-time speech, text, and image translation into ISL signs. Deployed an alternative cloud
+based solution using Azure API services. The system dynamically converts inputs into 
+standard ISL sign GIFs or letter representations, based on available sign datasets.</p>
+                <div class="project-tags">
+                    <span class="badge">Deep Learning</span>
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Flask</span>                    
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Azure</span>
+                    <span class="badge">API</span>  
+
+
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn btn-outline small">Live Demo</a>
+                    <a href="https://github.com/214g1a33c0/Indian-Sign-Language-Translation-Using-Deep-Learning-Techniques" class="btn btn-outline small">Source</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Mental Heath Prediction Using Smartphone Usage</h3>
+                <p> Developed a machine learning model to predict mental health crises by analyzing 
+smartphone usage data, including screen time, call logs, and message frequency. - Implemented using logistic regression for binary classification, achieving 86.7% accuracy. 
+Deployed the model in a user-friendly web application using Django framework. </p>
+                <div class="project-tags">
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Django</span>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn btn-outline small">Live Demo</a> 
+                    <a href="https://github.com/214g1a33c0/Mental-health-prediction-using-smartphone-usage" class="btn btn-outline small">Source</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Eleena – Voice Assistant </h3>
+                <p> Developed a robust voice assistant using the RAD model, structured into three integrated 
+                        modules: Command Processing- voice interactions and initialized voice recognizers for 
+                        essential daily commands. Web & System Integration- voice-activated access to popular 
+                        websites and local system apps by refining library integrations (e.g., Appopener). Interactive 
+                        Gaming: mini-games—including number guessing, coin flipping, dice rolling, and quizzes.   </p>
+                <div class="project-tags">
+                    <span class="badge">Artificial Intelligence</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Speech Recognition</span>
+                    
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn btn-outline small">Live Demo</a>
+                    <a href="https://github.com/214g1a33c0/Eleena---Voice-Assistant" class="btn btn-outline small">Source</a>
+                </div>
+            </div>
+
+                        <div class="project-card">
+                <h3>Anomaly Detection in Crowd using Smartphone datasets</h3>
+                <p> The project aims to identify abnormal behavior in crowded areas to detect threats using Machine Learning models 
+                    such as Isolation Forest and Local Outlier Factor with a smartphone sensor dataset. The developed model initially 
+                    achieved 73% accuracy, and after fine-tuning, the accuracy increased to 82%. Python Libraries: numpy, pandas, sklearn, matplotlib, seaborn, scipy.  </p>
+                <div class="project-tags">
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Python</span>
+                    <span class="badge">Data Visualization</span>
+                    <span class="badge">Data Pre Processing</span>
+                    
+                </div>
+                <div class="project-actions">
+                    <a href="#" class="btn btn-outline small">Live Demo</a>
+                    <a href="https://github.com/214g1a33c0/Anamoly-Detection-in-crowd-Infosys-Spring-board-" class="btn btn-outline small">Source</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="internships" class="animate-on-scroll">
+        <h1>Virtual Internships</h1>
+        <p class="subtitle">Highlighting my practical experiences and contributions during internships.</p>
+        <div class="internships-container">
+            <div class="internship-card">
+                <div class="internship-header">
+                    <i class="fas fa-robot card-icon"></i>
+                    <div>
+                        <h3>Artificial Intelligence Intern at Infosys Springboard</h3>
+                        <span class="internship-date">May 2024 - July 2024</span>
+                    </div>
+                </div>
+                <p>Completed 8-week virtual internship, attending mentor sessions and completing weekly milestones such as 
+data preprocessing, EDA, and model optimization.  
+• Achieved 82% accuracy with the Isolation Forest model and 79% accuracy with the Local outlier factor. </p>
+                <div class="badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">Data Collection</span>
+                    <span class="badge">Data preprocessing</span>
+                    <span class="badge">Data Visualization</span>
+                    <span class="badge">Machine Learning</span>
+
+                </div>
+            </div>
+            <div class="internship-card">
+                <div class="internship-header">
+                    <i class="fas fa-robot card-icon"></i>
+                    <div>
+                        <h3>Cyber Security with Kali Linux at Edunet Foundation (by APSSDC) </h3>
+                        <span class="internship-date">May 2024 - June 2024</span>
+                    </div>
+                </div>
+                <p>Completed 6-week virtual internship and acquired knowledge in Cyber Security and Kali Linux.  
+                Developed a project on a keylogger that records user keystrokes using the pynput library and stores them 
+                in a text file.  </p>
+                <div class="badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">Kali Linux</span>
+                    <span class="badge">Cyber Security</span>
+                    <span class="badge">Keylogger</span>
+                    <span class="badge">Data Security</span>
+
+                </div>
+            </div>
+
+                        <div class="internship-card">
+                <div class="internship-header">
+                    <i class="fas fa-robot card-icon"></i>
+                    <div>
+                        <h3>Emerging Technologies (AI & Cloud) Intern at Edunet Foundation</h3>
+                        <span class="internship-date">July 2024 - August 2024</span>
+                    </div>
+                </div>
+                <p>Successfully completed 4-week Internship, leveraging SkillsBuild & IBM Cloud Platform in 
+                    Emerging Technologies (AI & Cloud). Developed ML model for Mental Health Prediction using smartphone usage. </p>
+                <div class="badges">
+                    <span class="badge">Python</span>
+                    <span class="badge">Machine Learning</span>
+                    <span class="badge">Data Analysis</span>
+                    <span class="badge">Django</span>
+                    <span class="badge">HTML</span>
+                    <span class="badge">CSS</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">IBM Cloud</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="certs" class="animate-on-scroll">
+        <h1>Certifications & Achievements</h1>
+        <p class="subtitle">Showcasing my validated skills and continuous learning efforts.</p>
+        <div class="certs-container">
+                        <div class="cert-card">
+                <img src="assets/cert1.png" alt="GitHub Foundations">
+                <h3>GitHub Foundations</h3>
+                <p>Github | Issued January 2025</p>
+                <a href="https://www.credly.com/badges/7533c3b3-13ff-4734-8c66-37d8627d52fc" class="btn btn-outline small">View Credential</a>
+            </div>
+
+            <div class="cert-card">
+                <img src="assets/cert2.png" alt="DP-600 - Implementing Analytics Solutions Using Microsoft 
+Fabric">
+                <h3>DP-600 - Implementing Analytics Solutions Using Microsoft 
+Fabrict</h3>
+                <p>Microsoft | Issued December 2024</p>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/VENKATASAIKUMARVAILETI-8516/6E3AC3440242D711?sharingId=687C6D365641A3C" class="btn btn-outline small">View Credential</a>
+            </div>
+
+            <div class="cert-card">
+                <img src="assets/cert3.png" alt="Oracle Cloud Infrastructure 2024 Generative AI Professional">
+                <h3>Oracle Cloud Infrastructure 2024 Generative AI Professional</h3>
+                <p>Oracle | Issued July 2024</p>
+                <a href="https://catalog-education.oracle.com/ords/certview/sharebadge?id=6C1DA84C3323136251D736DF4E855456B01EAFDF7AD34A39F0C16A7E27963727" class="btn btn-outline small">View Credential</a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="contact" class="animate-on-scroll">
+        <h1>Get In Touch</h1>
+        <p class="subtitle">Have a question or want to work together? Feel free to reach out!</p>
+        <div class="contact-form-container">            <form class="form-card" id="contactForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" placeholder="What's this about?" required>
+                <label for="message">Message</label>
+                <textarea id="message" rows="5" placeholder="Your message..." required></textarea>
+                <button type="submit" class="btn btn-primary" id="submitBtn">Send Message</button>
+                <div id="form-status" class="form-status"></div>
+            </form>
+            
+            <!-- Direct send button as fallback -->
+            <!-- <button onclick="sendContactForm()" class="btn btn-outline" style="margin-top: 15px; width: 100%;">
+                Alternative: Click to Send Message
+            </button> -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-social">
+            <a href="https://github.com/214g1a33c0"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/saikumarvaileti/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>Thankyou</p>
+    </footer>
+
+    <!-- Add debugging info to help troubleshoot EmailJS -->
+    <script>
+        function checkEmailJSLoaded() {
+            if (typeof emailjs !== 'undefined') {
+                console.log('EmailJS loaded successfully');
+            } else {
+                console.error('EmailJS not loaded');
+            }
+        }
+        window.addEventListener('load', checkEmailJSLoaded);
+    </script>
+    <!-- Changed to non-module script to avoid CORS issues -->
+    <script src="script.js"></script>
+</body>
+</html>
